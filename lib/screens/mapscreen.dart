@@ -49,35 +49,38 @@ class _MapzState extends State<Mapz> {
               ),
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
-                child: Column(children: [
-                  Text(
-                    'Hazards Nearby',
-                    style: GoogleFonts.openSans(
-                        color: kprimary,
-                        fontSize: 40,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  const hazardcard(
-                    air: 'Air Index : 140',
-                    city: 'Khanna Tehsil',
-                    warn: 'Warning Level : Medium',
-                  ),
-                  const hazardcard(
-                    air: 'Air Index : 80',
-                    city: 'Chandigarh',
-                    warn: 'Warning Level : Low',
-                  ),
-                  const hazardcard(
-                    air: 'Air Index : 180',
-                    city: 'New Dehli',
-                    warn: 'Warning Level : High',
-                  ),
-                  const hazardcard(
-                    air: 'Air Index : 100',
-                    city: 'Mohali',
-                    warn: 'Warning Level : Medium',
-                  ),
-                ]),
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 90.0),
+                  child: Column(children: [
+                    Text(
+                      'Hazards Nearby',
+                      style: GoogleFonts.openSans(
+                          color: kprimary,
+                          fontSize: 40,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const hazardcard(
+                      air: 'Air Index : 140',
+                      city: 'Khanna Tehsil',
+                      warn: 'Warning Level : Medium',
+                    ),
+                    const hazardcard(
+                      air: 'Air Index : 80',
+                      city: 'Chandigarh',
+                      warn: 'Warning Level : Low',
+                    ),
+                    const hazardcard(
+                      air: 'Air Index : 180',
+                      city: 'New Dehli',
+                      warn: 'Warning Level : High',
+                    ),
+                    const hazardcard(
+                      air: 'Air Index : 100',
+                      city: 'Mohali',
+                      warn: 'Warning Level : Medium',
+                    ),
+                  ]),
+                ),
               ),
             )
           ],

@@ -27,7 +27,7 @@ class Homepage extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 30.0, right: 30, left: 30),
+                padding: const EdgeInsets.only(top: 70.0, right: 30, left: 30),
                 child: Container(
                   width: double.infinity,
                   height: 300,
@@ -139,7 +139,9 @@ class weather extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(top: 13.0),
+              padding: EdgeInsets.only(
+                top: 13.0,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -178,7 +180,7 @@ class weather extends StatelessWidget {
                       iconcolor: Colors.white,
                       maintext: Colors.white),
                   pill(
-                    classi: '     Temperature',
+                    classi: '   Temp.',
                     text: '30',
                     icon: PhosphorIcons.light.thermometerSimple,
                     bg: pillbg,
@@ -219,7 +221,7 @@ class pill extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 75,
-      width: 200,
+      width: 167,
       decoration: BoxDecoration(
         color: bg,
         borderRadius: BorderRadius.circular(60),
@@ -243,7 +245,7 @@ class pill extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 28),
+                padding: EdgeInsets.only(left: 20),
                 child: Text(
                   text,
                   style: TextStyle(
@@ -256,13 +258,16 @@ class pill extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 15.0),
+            padding: const EdgeInsets.only(left: 18.0),
             child: Icon(
               icon,
               color: iconcolor,
               size: 38,
               weight: 1,
             ),
+          ),
+          SizedBox(
+            width: 4,
           )
         ],
       ),

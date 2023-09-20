@@ -42,7 +42,7 @@ class SplashScreen extends StatelessWidget {
                       //color: Colors.white,
                       //borderRadius: BorderRadius.circular(80),
                       ),
-                  child: Image(image: AssetImage('iii.png')),
+                  child: Image(image: AssetImage('assets/iii.png')),
                 ),
                 const SizedBox(
                   height: 15,

@@ -17,6 +17,9 @@ class Formz extends StatelessWidget {
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
+              SizedBox(
+                height: 50,
+              ),
               Center(
                 child: Text('Enter Complaint',
                     style: GoogleFonts.openSans(
