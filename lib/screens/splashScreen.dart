@@ -1,11 +1,11 @@
-import 'dart:ui';
-
+import 'package:flutter/material.dart';
+import 'package:aqapplication/login_page.dart';
 import 'package:aqapplication/screens/formus.dart';
 import 'package:aqapplication/screens/homepage.dart';
-import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+import 'dart:ui';
 // import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
 Color tintColor = Colors.white;
@@ -38,10 +38,7 @@ class SplashScreen extends StatelessWidget {
                 Container(
                   width: 150,
                   height: 150,
-                  decoration: BoxDecoration(
-                      //color: Colors.white,
-                      //borderRadius: BorderRadius.circular(80),
-                      ),
+                
                   child: Image(image: AssetImage('assets/iii.png')),
                 ),
                 const SizedBox(
@@ -55,10 +52,13 @@ class SplashScreen extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                signbtn(
-                  bg: kprimary,
-                  icon: PhosphorIcons.light.signIn,
-                  text: 'Sign-up',
+                GestureDetector(
+                  onTap: (){Navigator.push(context, PageTransition(child: LoginPage(), type: PageTransitionType.fade));},
+                  child: signbtn(
+                    bg: kprimary,
+                    icon: PhosphorIcons.light.signIn,
+                    text: 'Sign-up',
+                  ),
                 ),
                 SizedBox(
                   height: 15,

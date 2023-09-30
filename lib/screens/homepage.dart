@@ -1,7 +1,10 @@
+
+
 import 'package:aqapplication/bottomnav.dart';
 import 'package:aqapplication/screens/formus.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:open_street_map_search_and_pick/open_street_map_search_and_pick.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 const Color bg = Color.fromRGBO(254, 250, 224, 1);
@@ -46,7 +49,7 @@ class Homepage extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(bottom: 30, top: 50),
                         child: Text(
-                          '80',
+                          '150',
                           style: GoogleFonts.openSans(
                               fontSize: 60,
                               fontWeight: FontWeight.w300,
@@ -111,7 +114,29 @@ class Homepage extends StatelessWidget {
                   ),
                 ),
               ),
-              weather()
+              weather(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal:20.0),
+                child: Container(
+                    width: double.infinity,
+                    height: 350,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30)
+                    ),
+                    child: OpenStreetMapSearchAndPick(
+                    center: LatLong(31, 75),
+                     locationPinText: '',
+                     buttonHeight: 0,
+                     buttonWidth: 0,
+                    locationPinIconColor: pillbg,
+                    buttonColor: pillbg,
+                    buttonText: 'Set Current Location',
+                    onPicked: (pickedData) {
+                    
+                    }),
+                ),
+              ),
+              SizedBox(height: 50,)
             ],
           ),
         ),
@@ -139,31 +164,39 @@ class weather extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(
+              padding: EdgeInsets.only(right: 10,
                 top: 13.0,
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  pill(
-                    classi: 'Wind',
-                    text: '2.7 km/s',
-                    icon: PhosphorIcons.light.wind,
-                    bg: pillbg,
-                    classtext: Colors.white,
-                    iconcolor: Colors.white,
-                    maintext: Colors.white,
-                  ),
-                  pill(
-                    classi: '    Humidity',
-                    text: '5%',
-                    icon: PhosphorIcons.light.waves,
-                    bg: pillbg,
-                    classtext: Colors.white,
-                    iconcolor: Colors.white,
-                    maintext: Colors.white,
-                  )
-                ],
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(width: 5,),
+                    pill(
+                      classi: 'Wind',
+                      text: '2.7 km/s',
+                      icon: PhosphorIcons.light.wind,
+                      bg: pillbg,
+                      classtext: Colors.white,
+                      iconcolor: Colors.white,
+                      maintext: Colors.white,
+                      
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    pill(
+                      classi: '    Humidity',
+                      text: '5%',
+                      icon: PhosphorIcons.light.waves,
+                      bg: pillbg,
+                      classtext: Colors.white,
+                      iconcolor: Colors.white,
+                      maintext: Colors.white,
+                    )
+                  ],
+                ),
               ),
             ),
             Padding(
@@ -221,7 +254,7 @@ class pill extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 75,
-      width: 167,
+      width: 175,
       decoration: BoxDecoration(
         color: bg,
         borderRadius: BorderRadius.circular(60),
@@ -234,7 +267,7 @@ class pill extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 10, bottom: 5),
+                padding: const EdgeInsets.only(left: 10, bottom: 5, right: 10),
                 child: Text(
                   classi,
                   style: TextStyle(
@@ -245,7 +278,7 @@ class pill extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 20),
+                padding: EdgeInsets.only(left: 20, right: 20),
                 child: Text(
                   text,
                   style: TextStyle(
